@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Lost-and-Found Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7ff;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #6a5acd);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .terms-content {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .terms-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .terms-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .terms-content p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .terms-box {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .terms-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .terms-box li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .terms-box li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .terms-box strong {
+            color: var(--dark);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .terms-content h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Terms and Conditions</h1>
+            <p>Understand your rights and responsibilities while using the Lost-and-Found Hub platform</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-box">
+                <h2>Welcome to Lost-and-Found Hub</h2>
+                <p>By accessing or using our platform, you agree to these <span class="highlight">Terms and Conditions</span>. Please read them carefully to understand your responsibilities.</p>
+            </div>
+            
+            <div class="terms-box">
+                <h2>Platform Usage</h2>
+                <ul>
+                    <li><strong>You must be at least 18 years old</strong> or have parental consent to use this platform.</li>
+                    <li>Ensure that all information you post, such as <span class="highlight">item details</span>, is accurate and truthful.</li>
+                    <li>Do <strong class="highlight">not</strong> use the platform for illegal or unethical purposes.</li>
+                    <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+                </ul>
+            </div>
+            
+            <div class="terms-box">
+                <h2>Posting Rules</h2>
+                <ul>
+                    <li><strong>Posts must relate to lost or found items only.</strong> Any unrelated content may be removed.</li>
+                    <li>Refrain from posting offensive or inappropriate content.</li>
+                    <li><span class="highlight">We reserve the right</span> to remove content that violates our guidelines.</li>
+                    <li>Do not post personal information about others without their consent.</li>
+                </ul>
+            </div>
+            
+            <div class="terms-box">
+                <h2>User Responsibilities</h2>
+                <ul>
+                    <li>You are solely responsible for the accuracy of the information you provide.</li>
+                    <li>Any interactions between users are at your own risk.</li>
+                    <li>Report any suspicious activity or content to our administration immediately.</li>
+                </ul>
+            </div>
+            
+            <div class="terms-box">
+                <h2>Limitation of Liability</h2>
+                <p>While we strive to maintain accurate content, <span class="highlight">we are not responsible</span> for inaccuracies in user-generated content or for any loss arising from interactions facilitated through our platform. Use the platform at your own risk.</p>
+                <p>We do not guarantee the recovery of lost items or the authenticity of found items posted by users.</p>
+            </div>
+            
+            <div class="terms-box">
+                <h2>Changes to the Terms</h2>
+                <p>We may update these terms periodically. <span class="highlight">It is your responsibility</span> to review them regularly. Continuing to use the platform signifies your acceptance of the updated terms.</p>
+                <p>We will notify users of significant changes through email or platform notifications.</p>
+            </div>
+            
+            <div class="terms-box">
+                <h2>Intellectual Property</h2>
+                <p>All content on this platform, including logos, text, and design elements, are the property of Lost-and-Found Hub and are protected by intellectual property laws.</p>
+                <p>Users retain ownership of the content they post but grant us a license to display and distribute that content on our platform.</p>
+            </div>
+
+            <div class="contact-info">
+                <h2>Have Questions About Our Terms?</h2>
+                <p>We're here to help! Contact us at <a href="mailto:contact@lostandfoundhub.com"><i class="fas fa-envelope"></i> contact@lostandfoundhub.com</a> for clarification about our Terms and Conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lost-and-Found Hub. All rights reserved. <span style="opacity: 0.7;">|</span> <a href="privacy-policy.html" style="color: white; text-decoration: none;">Privacy Policy</a> <span style="opacity: 0.7;">|</span> <a href="terms-and-conditions.html" style="color: white; text-decoration: none;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

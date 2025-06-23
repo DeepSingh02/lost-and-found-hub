@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lost-and-Found Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7ff;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #6a5acd);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.5;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .about-us {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .about-us h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-us h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .about-us p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .mission-box {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .how-it-works {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .how-it-works ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .how-it-works li {
+            counter-increment: step-counter;
+            margin-bottom: 30px;
+            padding-left: 70px;
+            position: relative;
+        }
+        
+        .how-it-works li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+        }
+        
+        .how-it-works strong {
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .how-it-works li {
+                padding-left: 60px;
+            }
+            
+            .how-it-works li::before {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>About Our Lost-and-Found Hub</h1>
+            <p>Your trusted platform for reuniting lost items with their owners</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="signup.jsp"><i class="fas fa-user-plus"></i> Register</a></li>
+                <li><a href="login.jsp"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="about-us">
+        <div class="container">
+            <div class="mission-box">
+                <h2>Our <span class="highlight">Purpose</span></h2>
+                <p>The <span class="highlight">Lost-and-Found Hub</span> was created to solve a common problem - the frustration of losing personal belongings with no easy way to recover them. Our platform provides a centralized, user-friendly solution that connects people who have lost items with those who have found them.</p>
+                <p>Every day, thousands of valuable items are lost in public spaces. Without an efficient system to connect finders with owners, most of these items never find their way back. That's where we come in.</p>
+            </div>
+            
+            <h2>How It Works</h2>
+            <div class="how-it-works">
+                <ol>
+                    <li><strong><span class="highlight">Report Lost Item</span></strong>: Quickly create a listing with details about your lost item, including when and where it was lost, and any identifying features.</li>
+                    <li><strong><span class="highlight">Search Found Items</span></strong>: Browse through items that others have found to see if your lost item has been recovered.</li>
+                    <li><strong><span class="highlight">Verification Process</span></strong>: Our admin team carefully verifies ownership through detailed matching of item descriptions and locations before any contact information is shared.</li>
+                    <li><strong><span class="highlight">Safe Reunion</span></strong>: Contact details are only exchanged after successful verification by our admin team to ensure safe return of lost items.</li>
+                </ol>
+            </div>
+
+            <h2>Why Choose Our Platform</h2>
+<div class="mission-box">
+    <ul style="list-style-type: none; text-align: left; max-width: 600px; margin: 0 auto;">
+        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0; top: 3px;"></i>
+            <strong>User-Friendly Design:</strong> Simple interface that's easy for everyone to use
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0; top: 3px;"></i>
+            <strong>Category-Based Navigation:</strong> Quickly filter lost/found items by categories for faster matching
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0; top: 3px;"></i>
+            <strong>Admin-Verified Matches:</strong> All matches are verified by our team before contact is established
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0; top: 3px;"></i>
+            <strong>Secure Communication:</strong> Your personal information remains private until verified
+        </li>
+        
+    </ul>
+</div>
+
+            <div class="contact-info">
+                <h2>Have Questions?</h2>
+                <p>We're here to help! Contact us at <a href="mailto:contact@lostandfoundhub.com"><i class="fas fa-envelope"></i> contact@lostandfoundhub.com</a> for assistance or feedback about our platform.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lost-and-Found Hub. All rights reserved. <span style="opacity: 0.7;">|</span> <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> <span style="opacity: 0.7;">|</span> <a href="#" style="color: white; text-decoration: none;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

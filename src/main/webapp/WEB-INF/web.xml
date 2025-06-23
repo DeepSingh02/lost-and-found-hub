@@ -1,0 +1,29 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- Mapping for LostItemServlet -->
+    <servlet>
+        <servlet-name>LostItemServlet</servlet-name>
+        <servlet-class>com.myproject.lostandfoundhub.auth.LostItemServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LostItemServlet</servlet-name>
+        <url-pattern>/LostItemServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapping for FoundItemServlet -->
+    <servlet>
+        <servlet-name>FoundItemServlet</servlet-name>
+        <servlet-class>com.myproject.lostandfoundhub.auth.FoundItemServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FoundItemServlet</servlet-name>
+        <url-pattern>/FoundItemServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

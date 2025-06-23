@@ -1,0 +1,194 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Form Section */
+.form-section {
+    width: 90%; /* Make it more responsive */
+    max-width: 800px; /* Max width for large screens */
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Form Container */
+.form-container
+ {
+    display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
+}
+
+/* Label Style */
+label
+ {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Input, Textarea, Select */
+input, textarea, select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; /* Ensure the inputs take full width */
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Submit Button */
+/* Style for Submit Button Container */
+.form-submit-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Style for Submit Button */
+.form-submit-button {
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Adjust padding for a better size */
+    font-size: 16px; /* Font size for better readability */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Smooth corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transition effects */
+}
+
+/* Hover Effect */
+.form-submit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Focus Effect */
+.form-submit-button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px #0056b3; /* Add subtle glow */
+}
+
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Hidden Class for Sections */
+.hidden {
+    display: none;
+}
+
+
+/* Category Info Description */
+.category-info {
+    background-color: #e7f8e7;  /* Light green for the category info section */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.category-info ul {
+    padding-left: 20px;
+}
+
+.category-info li {
+    margin-bottom: 10px;
+}
+
+.category-info strong {
+    color: #4CAF50;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333; /* Dark background */
+    padding: 10px 0; /* Padding for navbar */
+    width: 100%; /* Full width */
+}
+
+.navbar-container {
+    max-width: 1200px; /* Max width for navbar container */
+    margin: 0 auto; /* Center the navbar container */
+    padding: 0 20px; /* Horizontal padding to prevent the navbar from touching edges */
+    display: flex;
+    justify-content: center; /* Center navbar content */
+    align-items: center; /* Align items vertically in the middle */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links li {
+    margin: 0 20px; /* Adds space between the links */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #4CAF50; /* Green background on hover */
+    color: white; /* White text on hover */
+    border-radius: 5px; /* Slight border radius */
+}
+
+.navbar-links a.active {
+    background-color: #007BFF; /* Blue background for active link */
+    color: white;
+    border-radius: 5px;
+}

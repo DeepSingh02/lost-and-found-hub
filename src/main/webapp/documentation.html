@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide | LOST&FOUND MUMBAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF5A5F;
+            --secondary: #00A699;
+            --dark: #2B2D42;
+            --light: #F7F7F7;
+            --accent: #FFB400;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        /* Navigation (Improved) */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .btn-nav {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 90, 95, 0.3);
+        }
+        
+        .btn-nav:hover {
+            background-color: #e04a4f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 90, 95, 0.4);
+            color: white;
+        }
+
+        /* Rest of your existing CSS remains the same */
+        /* Documentation Header */
+        .doc-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1582731593955-d47d3d5e25a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 10rem 2rem 5rem;
+            margin-top: 80px;
+        }
+        
+        .doc-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Documentation Content */
+        .doc-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .doc-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .doc-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .note {
+            background-color: rgba(0,166,153,0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .category-card {
+            background: var(--light);
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .category-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 5px;
+        }
+        
+        /* Footer (Same as index.html) */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .doc-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">LOST<span>&</span>FOUND MUMBAI</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="documentation.html" class="active">User Guide</a>
+            <a href="about-us.html">About</a>
+            <a href="login.jsp" class="btn-nav">Login</a>
+        </div>
+    </nav>
+
+    <!-- Documentation Header -->
+    <section class="doc-header">
+        <h1>USER GUIDE</h1>
+        <p>Everything you need to know about using LOST&FOUND MUMBAI</p>
+    </section>
+
+    <!-- Documentation Content -->
+    <div class="doc-container">
+        <!-- Reporting Lost Items -->
+        <section class="doc-section">
+            <h2>How to Report a Lost Item</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Click "Report Lost Item"</h3>
+                    <p>Start from the homepage by clicking the red "Report Lost Item" button.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Login or Register</h3>
+                    <p>If you're not logged in, you'll need to create an account first.</p>
+                    <div class="note">
+                        <strong>Password Requirements:</strong> At least 8 characters with 1 uppercase letter, 1 number, and 1 special character.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Select Category</h3>
+                    <p>Choose the most appropriate category for your lost item:</p>
+                    
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <i class="fas fa-laptop"></i>
+                            <h4>Product</h4>
+                            <p>Electronics, gadgets, clothing, etc.</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-paw"></i>
+                            <h4>Humans/Animals</h4>
+                            <p>Lost people or pets</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-passport"></i>
+                            <h4>Documents</h4>
+                            <p>IDs, passports, certificates</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-gem"></i>
+                            <h4>Valuables</h4>
+                            <p>Jewelry, watches, wallets</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-car"></i>
+                            <h4>Vehicles</h4>
+                            <p>Cars, bikes, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Fill Item Details</h3>
+                    <p>Provide all requested information including:</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Item name and description</li>
+                        <li>Location where it was lost</li>
+                        <li>Date and approximate time</li>
+                        <li>Distinguishing features</li>
+                        <li>Upload photos (highly recommended)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Submit & Monitor</h3>
+                    <p>Your report will appear on the "View Lost Items" page where others can see it. You'll receive notifications if someone finds a matching item.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reporting Found Items -->
+        <section class="doc-section">
+            <h2>How to Report a Found Item</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Click "Report Found Item"</h3>
+                    <p>Start from the homepage by clicking the "Report Found Item" button.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Follow Similar Steps</h3>
+                    <p>The process is similar to reporting a lost item - select category, provide details, and submit.</p>
+                    <div class="note">
+                        <strong>Important:</strong> If you found identification documents, please conceal sensitive information when uploading photos.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Claiming Items -->
+        <section class="doc-section">
+            <h2>How to Claim a Found Item</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Browse Found Items</h3>
+                    <p>Visit the "View Found Items" page and search by category or location.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Click "Claim This Item"</h3>
+                    <p>If you believe an item belongs to you, click the claim button.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Submit Claim Form</h3>
+                    <p>Provide proof of ownership and contact information.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Admin Verification</h3>
+                    <p>Our team will verify your claim within 48 hours. If approved, we'll connect you with the finder. You can check your approval status and the finder's contact information in the 'My Reports' section.</p>
+                    <div class="note">
+                        <strong>Safety Note:</strong> Always arrange meetings in public places for item exchanges.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Features -->
+        <section class="doc-section">
+            <h2>Dashboard Features</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>View Lost Items</h3>
+                    <p>See all active lost item reports in a scrollable feed (like social media posts).</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>View Found Items</h3>
+                    <p>Searchable list of found items where you can claim matches.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>My Reports</h3>
+                    <p>Track all items you've reported as lost or found, including claim status.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="doc-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long do items stay listed?</div>
+                <div class="faq-answer">
+                    <p>Active listings remain for 30 days. You can renew them if needed.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is there a fee for using this service?</div>
+                <div class="faq-answer">
+                    <p>No, LOST&FOUND MUMBAI is completely free for all users.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What information should I avoid sharing?</div>
+                <div class="faq-answer">
+                    <p>Never share financial details, full ID numbers, or home addresses publicly.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How does the admin verification work?</div>
+                <div class="faq-answer">
+                    <p>Our team checks claim details against the found item description. We may request additional proof before connecting parties.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I report items found outside Mumbai?</div>
+                <div class="faq-answer">
+                    <p>Currently we only serve the Mumbai metropolitan area.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">LOST<span>&</span>FOUND MUMBAI</div>
+                <p>Reuniting Mumbaikars with their belongings since 2023.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="documentation.html">User Guide</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Need Help?</h3>
+                <p><i class="fas fa-envelope"></i> support@lostfoundmumbai.com</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 LOST&FOUND MUMBAI. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Make all FAQs closed by default
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

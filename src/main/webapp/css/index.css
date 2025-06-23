@@ -1,0 +1,316 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0078d4;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header .center-logo {
+    width: 120px; /* Adjust to your desired size */
+    height: 120px; /* Keep height equal to width for a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    border: 3px solid white; /* Optional: Add a clean white border for focus */
+    background-color: white; /* Optional: For transparent logo backgrounds */
+    display: block;
+    margin: 10px auto; /* Centers the logo within the header */
+    object-fit: cover; /* Ensures the logo scales nicely inside the circle */
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #0078d4;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+        padding: 10px;
+    }
+}
+
+/* Marquee Section */
+.marquee {
+    background-color: black;
+    color: #ffe600;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee p {
+    animation: scroll-text 15s linear infinite;
+}
+
+@keyframes scroll-text {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* Tutorial Video */
+.tutorial video {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Titles */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #0078d4;
+}
+
+/* General Grid Styles */
+.updates-grid,
+.features-grid,
+.success-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Card Styles */
+.update-card,
+.feature-card,
+.success-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.update-card h3,
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.update-card p,
+.feature-card p,
+.success-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Updates Section */
+.updates-section {
+    background-color: #f0f4f8;
+    padding: 40px 20px;
+}
+
+.update-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.update-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Card Styles */
+.success-card span {
+    display: block;
+    font-size: 0.9rem;
+    color: #0078d4;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* View All Button */
+.view-all {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-all button {
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-all button:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Updates Section */
+@media (max-width: 768px) {
+    .updates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Feedback Section */
+.feedback-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.feedback-section h2 {
+    color: #0078d4;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.feedback-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form button {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-form button:hover {
+    background-color: #005bb5;
+}
+
+/* Feedback Response Message */
+#feedbackResponse {
+    color: green;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+
+  /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative; /* To position the close button */
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+       .close {
+    color: black; /* Black color for better visibility */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 36px; /* Increased size for better visibility */
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.close:hover,
+.close:focus {
+    color: red; /* Red color on hover */
+    text-decoration: none;
+}
+
+        /* Additional style to make sure modal is properly centered */
+        .modal-content .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1050;
+        }
